@@ -1,7 +1,7 @@
 import requests
 
 def get_hashtag_id(tag):
-    api_url = f'https://graph.facebook.com/v11.0/ig_hashtag_search?user_id={user_id}&q={tag}&access_token={access_token}'
+    api_url = f'https://graph.facebook.com/v17.0/ig_hashtag_search?user_id={user_id}&q={tag}&access_token={access_token}'
 
     response = requests.get(api_url)
     data = response.json()
@@ -15,7 +15,7 @@ def get_hashtag_id(tag):
 
 
 def get_recent_post_count(hashtag_id):
-    api_url = f'https://graph.facebook.com/v11.0/{hashtag_id}/recent_media?user_id={user_id}&fields=id&access_token={access_token}'
+    api_url = f'https://graph.facebook.com/v17.0/{hashtag_id}/recent_media?user_id={user_id}&fields=id&access_token={access_token}'
 
     response = requests.get(api_url)
     data = response.json()
