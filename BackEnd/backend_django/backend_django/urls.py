@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import POIViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+]
+
+
+#POI API
+router = DefaultRouter()
+router.register(r'pois', POIViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
 ]
