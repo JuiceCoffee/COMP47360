@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'newyorkbusy',
-        'USER': 'DB4COMP47360',
+        'USER': 'db4comp47360',
         'PASSWORD': 'researchpracticum',
         'HOST': 'newyorkbusy.cmbwzu1bhkey.us-east-1.rds.amazonaws.com',
         'PORT': '5432',

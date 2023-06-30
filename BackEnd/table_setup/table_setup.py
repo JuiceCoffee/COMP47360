@@ -8,7 +8,7 @@ try:
     connection = psycopg2.connect(
         host="newyorkbusy.cmbwzu1bhkey.us-east-1.rds.amazonaws.com",  
         dbname="newyorkbusy", 
-        user="DB4COMP47360",
+        user="db4comp47360",
         password="researchpracticum",  
         port="5432"  
     )

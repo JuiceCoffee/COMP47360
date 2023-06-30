@@ -15,18 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from .views import POIViewSet
+from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-]
-
-
-#POI API
-router = DefaultRouter()
-router.register(r'pois', POIViewSet)
-
-urlpatterns = [
-    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('', include('nybusy.urls')),
 ]
