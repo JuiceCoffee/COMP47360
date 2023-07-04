@@ -1,0 +1,11 @@
+front-end:
+    Yingyuan:
+        -nodejs
+
+back-end:
+    Rikkie:
+        -django
+        -psycopg2
+    Zhaozhong:
+        -pandas
+        -requests
