@@ -1,13 +1,22 @@
+""" Database models"""
+
 from django.db import models
+from django.contrib.auth.models import(
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
+
 
 # Create your models here.
-class User(models.Model):
-    username = models.CharField(max_length=255, unique=True)
-    password = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255, unique=True)
-    category1 = models.CharField(max_length=255)
-    category2 = models.CharField(max_length=255)
-    category3 = models.CharField(max_length=255)
+class User(AbstractBaseUser,PermissionsMixin,):
+    """User in the system"""
+    email = models.EmailField(max_length = 255,unique = True)
+    name = models.CharField(max_length = 255)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=True)
+
+    USERNAME_FIELD = 'email'
 
 class POI(models.Model):
     name = models.CharField(max_length=255)
