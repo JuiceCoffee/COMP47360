@@ -14,6 +14,7 @@ class POI(models.Model):
     description = models.TextField(blank=True, null=True)
     latitude = models.FloatField()
     longitude = models.FloatField()
+    Address = models.CharField(max_length=255)
     opening_hours = models.FloatField()
     category = models.CharField(max_length=255)
 
