@@ -30,4 +30,5 @@ urlpatterns = [
         name='api-docs'
     ),
     path('', include('nybusy.urls')),
+    path('api/user/', include('user.urls')),
 ]
