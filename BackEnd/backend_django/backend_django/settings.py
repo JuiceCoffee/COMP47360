@@ -150,3 +150,6 @@ REST_FRAMEWORK = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+GDAL_LIBRARY_PATH = r'F:\Users\98692\anaconda3\envs\busyenv2\Library\bin\gdal.dll'
+
