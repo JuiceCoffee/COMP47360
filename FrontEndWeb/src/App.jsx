@@ -10,6 +10,7 @@ import Map from "./screens/Map";
 import PoisMap from "./screens/PoisMap";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Weather from "./screens/Weather";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,6 +50,16 @@ const App = () => {
             <Link to="/Login">
               <h1>Sign up/in</h1>
             </Link>
+
+            {/* <h1>weather block</h1> */}
+            <Link to="/Weather">
+              <h1>weather block</h1>
+            </Link>
+
+
+
+
+
           </header>
           <Routes>
             <Route path="/details/:id" element={<Details />} />
@@ -57,6 +68,7 @@ const App = () => {
             <Route path="/PoisMap" element={<PoisMap />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/Weather" element={<Weather />} />
           </Routes>
         </AdoptedPetContext.Provider>
       </QueryClientProvider>
