@@ -32,6 +32,12 @@ export default function Login() {
     console.log("Password:", password);
   };
 
+  function handleBackClick() {
+    {/* CALL THE LOGIN PAGE when clicked */}
+  }
+  
+
+
   return (
     <div
       className="App"
@@ -44,14 +50,20 @@ export default function Login() {
       }}
     >
       <div className="container">
+
+      <button className="back-btn" onClick={() => handleBackClick()}>
+        <img src="./assets/icons/back-button.png" style={{ height: "30px", width: "30px" }}></img>
+      </button>
+
         {/* Image */}
         <div style={{ textAlign: "center" }}>
+        <h1>NYC Explorer</h1>
           <img
             src="./assets/icons/homeImage.png"
             alt="Image"
             style={{ width: "200px", height: "200px" }}
           />
-          <h1>Register</h1>
+          <h2>Register</h2>
         </div>
 
         {/* Textbox */}
@@ -67,21 +79,21 @@ export default function Login() {
             value={name}
             onChange={(event) => setUserName(event.target.value)}
             placeholder="User Name"
-            style={{ margin: "10px", marginLeft: "0px", width: "100%" }}
+            style={{ margin: "10px", marginLeft: "0px", width: "100%", borderRadius: "5px", height: "20px"}}
           />
           <input
             type="text"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="Email"
-            style={{ margin: "10px", marginLeft: "0px", width: "100%" }}
+            style={{ margin: "10px", marginLeft: "0px", width: "100%", borderRadius: "5px", height: "20px"}}
           />
           <input
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             placeholder="Password"
-            style={{ margin: "10px", marginLeft: "0px", width: "100%" }}
+            style={{ margin: "10px", marginLeft: "0px", width: "100%", borderRadius: "5px", height: "20px"}}
           />
 
           {/* <div
@@ -112,11 +124,34 @@ export default function Login() {
             }}
           >
             <button
-              type="button"
-              onClick={() => handleRegister(name, email, password)}
-            >
-              Register
-            </button>
+                type="button"
+                onClick={() => handleRegister(name, email, password)}
+                style={{
+                  padding: "10px 20px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "10px",
+                  fontSize: "15px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)",
+                }}
+                  >
+                    Register
+              </button>
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
         </div>
       </div>

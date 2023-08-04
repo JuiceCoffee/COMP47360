@@ -45,12 +45,13 @@ export default function Login() {
       <div className="container">
         {/* Image */}
         <div style={{ textAlign: "center" }}>
+          <h1>NYC Explorer</h1>
           <img
             src="./assets/icons/homeImage.png"
             alt="Image"
             style={{ width: "200px", height: "200px" }}
           />
-          <h1>Login</h1>
+          <h2>Login</h2>
         </div>
 
         {/* Textbox */}
@@ -66,14 +67,14 @@ export default function Login() {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="Email"
-            style={{ margin: "10px", marginLeft: "0px", width: "100%" }}
+            style={{ margin: "10px", marginLeft: "0px", width: "100%", borderRadius: "5px", height: "20px"}}
           />
           <input
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             placeholder="Password"
-            style={{ margin: "10px", marginLeft: "0px", width: "100%" }}
+            style={{ margin: "10px", marginLeft: "0px", width: "100%", borderRadius: "5px", height: "20px" }}
           />
 
           <div
@@ -95,18 +96,32 @@ export default function Login() {
 
           {/* Button */}
           <div
-            style={{
-              textAlign: "center",
-              width: "70%",
-              margin: "0 auto",
-              marginTop: "25px",
-              marginBottom: "25px",
-            }}
-          >
-            <button type="button" onClick={() => handleLogin(email, password)}>
-              Login
-            </button>
-          </div>
+              style={{
+                textAlign: "center",
+                width: "70%",
+                margin: "0 auto",
+                marginTop: "25px",
+                marginBottom: "25px",
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => handleLogin(email, password)}
+                style={{
+                  padding: "10px 20px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "10px",
+                  fontSize: "15px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)",
+                }}
+                  >
+                    Login
+              </button>
+                </div>
         </div>
       </div>
     </div>
