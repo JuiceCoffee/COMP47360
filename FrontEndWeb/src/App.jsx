@@ -1,7 +1,10 @@
 
 import React, {useState, useEffect}from "react";
 import { createRoot } from "react-dom/client";
+
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SearchPramas from "./SearchParams";
 import Details from "./Details";
@@ -26,14 +29,22 @@ const queryClient = new QueryClient({
 
 const App = () => {
   const adoptedPetHook = useState(null);
+  const userlocation = window.location.pathname;
+    console.log('Current Page:', userlocation);
 
 
-  const [weather, setWeather] = useState([]); // Set initial value as an empty array
+    //here
+    document.body.classList.remove('background-image');
+    
+
+  
+
+  const [weather, setWeather] = useState([]);
 
   useEffect(() => {
     async function fetchWeatherData() {
       try {
-        const data = await fetchWeather(); // Use the mock function for testing
+        const data = await fetchWeather();
         setWeather(data);
       } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -42,7 +53,7 @@ const App = () => {
     fetchWeatherData();
   }, []);
 
-  // Get the latest temperature from the last element of the 'weather' array
+  //latest element
   const latestTemperature = weather.length > 0 ? weather[weather.length - 1].temperature : null;
   const latestHumidity = weather.length > 0 ? weather[weather.length - 1].humidity : null;
   const latestprecipitation_probability = weather.length > 0 ? weather[weather.length - 1].precipitation_probability : null;
@@ -105,44 +116,51 @@ const App = () => {
     }
   };
 
+  
+
 
   return (
     <BrowserRouter>
-      {/* <div>
-        {" "}
-        <Mapbox />{" "}
-      </div> */}
+      
       <QueryClientProvider client={queryClient}>
         <AdoptedPetContext.Provider value={adoptedPetHook}>
           <header>
+
+
+           {userlocation !== "/Login" ? ( 
             <Link to="/">
               <h1>Home</h1>
-            </Link>
+            </Link> 
+            ):null}
+
+            {userlocation !== "/Login" ? (
             <Link to="/">
               <h1>Discover</h1>
-            </Link>
+            </Link> ):null}
+
+
+            {userlocation !== "/Login" ? (
             <Link to="/PoisMap">
               <h1>POIs Map</h1>
-            </Link>
+            </Link> ):null}
+
+            {userlocation !== "/Login" ? (
             <Link to="/Map">
               <h1>Heat Map</h1>
-            </Link>
+            </Link>):null}
+
+
+            {userlocation !== "/Login" ? (  
             <Link to="/">
               <h1>Favorite</h1>
-            </Link>
+            </Link>):null}
+
+            {userlocation !== "/Login" ? (
             <Link to="/Login">
               <h1>Sign up/in</h1>
-            </Link>
+            </Link>):null}
 
-            {/* <h1>weather block</h1>
-            
-            <Link to="/Weather">
-              <h1>weather block</h1>
-            </Link>*/}
-            
-
-
-
+            {userlocation !== "/Login" ? (
           <div className="hello">
             {weather.length > 0 ? (
               <>
@@ -166,12 +184,7 @@ const App = () => {
             ) : (
               <p>Loading...</p>
             )}
-          </div>
-
-
-
-
-
+          </div>):null}
 
           </header>
           <Routes>
@@ -180,7 +193,7 @@ const App = () => {
             <Route path="/Map" element={<Map />} />
             <Route path="/PoisMap" element={<PoisMap />} />
             <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
+            <Route path="/Register" element={<Register />}  />
             <Route path="/Weather" element={<Weather />} />
           </Routes>
         </AdoptedPetContext.Provider>

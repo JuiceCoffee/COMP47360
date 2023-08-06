@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+
 
 export default function Login() {
   const [name, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  
 
   function handleRegister(name, email, password) {
     axios
@@ -32,8 +35,10 @@ export default function Login() {
     console.log("Password:", password);
   };
 
+
+
   function handleBackClick() {
-    {/* CALL THE LOGIN PAGE when clicked */}
+      window.history.back();
   }
   
 

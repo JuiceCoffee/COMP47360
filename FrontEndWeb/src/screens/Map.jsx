@@ -1,7 +1,10 @@
-import React from "react";
+//import React from "react";
 import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { statesData } from "../data/taxizones.js";
+import React, { useEffect } from 'react';
+
+
 // import { statesData } from "./data/taxizones.js";
 // import { statesData } from "./data/data.js";
 // import "./App.css";
@@ -10,7 +13,15 @@ const center = [40.7896239, -73.9598939];
 // const center = [40.63463151377654, -97.89969605983609]; //tutorial
 
 export default function Map() {
+
+
+  document.body.style.backgroundImage='none';
+
+
+
   return (
+    
+
     <MapContainer
       center={center}
       zoom={12}

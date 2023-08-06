@@ -20,6 +20,9 @@ export default function Login() {
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
         console.log(userInfo);
         navigate("/Map");
+
+        //window.location.reload();
+
       })
       .catch((error) => {
         setError("Invalid credentials. Please try again.");
@@ -28,7 +31,7 @@ export default function Login() {
   }
 
   const handleSignUpClick = () => {
-    navigate("/Register"); // Navigate to the Register page
+    navigate("/Register");
   };
 
   return (
