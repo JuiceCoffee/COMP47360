@@ -18,6 +18,8 @@ import Weather from "./screens/Weather";
 
 import fetchWeather from "./fetchweather";
 
+var globalreloader = 1;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

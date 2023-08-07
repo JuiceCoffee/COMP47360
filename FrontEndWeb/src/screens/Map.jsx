@@ -2,7 +2,8 @@
 import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { statesData } from "../data/taxizones.js";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import globalState, { updateGlobalReload } from '../globals';
 
 
 // import { statesData } from "./data/taxizones.js";
@@ -12,10 +13,31 @@ import React, { useEffect } from 'react';
 const center = [40.7896239, -73.9598939];
 // const center = [40.63463151377654, -97.89969605983609]; //tutorial
 
+
 export default function Map() {
 
   //remove the video background
   document.body.style.backgroundImage='none';
+  
+  
+
+  const [isExecuted, setIsExecuted] = useState(false);
+
+  useEffect(() => {
+    if (!isExecuted && globalState.globalReload === 1) {
+      console.log(globalState.globalReload);
+      updateGlobalReload(2);
+      console.log(globalState.globalReload);
+
+      // Set the flag to true to prevent further executions
+      setIsExecuted(true);
+    }
+  }, [isExecuted]);
+    
+
+ 
+
+  
 
 
 

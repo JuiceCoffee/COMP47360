@@ -415,6 +415,22 @@ form .pet {
   width: 35px;
 }
 
+/* Loading */
+
+.loadinggry {
+  position: "fixed";
+  top: "50%";
+  left:"50%";
+  width: "50%";
+  height: "50%";
+  backgroundColor: "rgba(0, 0, 0, 0.1)";
+  display: "flex";
+  transform: "translate(-50%, -50%)";
+  justifyContent: "center";
+  alignItems: "center";
+  zIndex: 1;
+}
+
 
 
 
