@@ -14,7 +14,7 @@ const center = [40.7896239, -73.9598939];
 
 export default function Map() {
 
-
+  //remove the video background
   document.body.style.backgroundImage='none';
 
 
@@ -39,8 +39,7 @@ export default function Map() {
 
         return (
           <Polygon
-            // <MultiPolygon
-            key={state.id} // Add a unique key prop here
+            key={state.id} 
             pathOptions={{
               fillColor: "gray",
               fillOpacity: 0.7,

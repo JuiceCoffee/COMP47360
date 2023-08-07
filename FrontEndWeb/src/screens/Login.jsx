@@ -88,7 +88,7 @@ export default function Login() {
           >
             <p>
               Don't have an account?{" "}
-              <a href="#" onClick={handleSignUpClick}>
+              <a  onClick={handleSignUpClick}>
                 Sign up
               </a>
             </p>
