@@ -163,25 +163,43 @@ const App = () => {
             </Link>):null}
 
             {userlocation !== "/Login" ? (
-          <div className="hello">
+          <div className="weatherstyle">
             {weather.length > 0 ? (
               <>
+              <div class="block">
+                
                 <div className="info">
+                  <img src="./assets/icons/thermometer.png" height="25px" width="25px"></img>
                   <p>Temp: </p>
                   <p id="number">{latestTemperature + "˚C"}</p>
                 </div>
+              
+
+              
                 <div className="info">
+                <img src="./assets/icons/humidity.png" height="25px" width="25px"></img>
                   <p>Humidity: </p>
                   <p id="number">{latestHumidity + "%"}</p>
                 </div>
+              
+
+              
                 <div className="info" style={{ whiteSpace: "nowrap" }}>
+                <img src="./assets/icons/warning.png" height="25px" width="25px"></img>
                   <p>Rain risk: </p>
                   <p id="number">{latestprecipitation_probability + "%"}</p>
                 </div>
+              
+
                 <div className="info" style={{ whiteSpace: "nowrap" }}>
+                 <img src="./assets/icons/sun.png" height="25px" width="25px"></img>
                   <p>Weather: </p>
                   <p id="number">{getWeatherDescription(latestweathercode)}</p>
                 </div>
+
+                </div>
+                
+
               </>
             ) : (
               <p>Loading...</p>
